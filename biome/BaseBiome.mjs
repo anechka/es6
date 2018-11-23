@@ -3,14 +3,14 @@ export default class BaseBiome {
     constructor(temperature, defaultTemp) {
         defaultTemp = defaultTemp || 0;
 
-        const noTemp = temperature === 0 && temperature;
+        const isTemperature = Number.isInteger(temperature);
 
         console.assert(
-            noTemp,
+            isTemperature,
             "No temperature provided for Biome"
         );
 
-        this.baseTemp = noTemp ? defaultTemp : temperature
+        this.baseTemp = isTemperature ? temperature : defaultTemp
     }
 
     get temperature() {
