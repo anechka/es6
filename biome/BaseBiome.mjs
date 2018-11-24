@@ -9,12 +9,12 @@ export default class BaseBiome {
 
         console.assert(
             isTemperature,
-            "No temperature provided for Biome"
+            `No temperature provided for ${this.constructor.name}`
         );
 
         this.baseTemp = isTemperature ? temperature : defaultTemp;
 
-        // Rainless
+        // Rain or Winds
         if (this.baseTemp > 0) {
             this.rainFall = this.baseTemp > 35 ? null : "rain";
         }

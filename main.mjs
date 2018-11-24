@@ -2,11 +2,15 @@ import { TaigaBiome } from "./biome/Taiga"
 import { DesertBiome } from "./biome/Desert"
 import { PlainsBiome } from "./biome/Plains"
 
-const Taiga = new TaigaBiome(20);
+import Zombie from "./entity/monster/Zombie"
+
+const Taiga = new TaigaBiome(0);
 const Desert = new DesertBiome();
 const Plains = new PlainsBiome(30);
 
-//Plains.addEntity({type: "Zombie"});
+Taiga.addEntity(new Zombie());
+Plains.addEntity(new Zombie());
+Desert.addEntity(new Zombie());
 
 console.dir(Taiga);
 console.dir(Desert);
