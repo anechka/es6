@@ -1,9 +1,8 @@
 import BaseBiome from "./BaseBiome";
 
 export
-class TaigaBiome extends BaseBiome {
-
+class PlainsBiome extends BaseBiome {
     constructor(temperature) {
-        super(temperature, 10);
+        super(temperature, 20)
     }
 }
