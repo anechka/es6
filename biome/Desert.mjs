@@ -7,7 +7,7 @@ class DesertBiome extends BaseBiome {
     constructor(temperature) {
         super(temperature, 40);
 
-        this.addWood(new Cactus(this.temperature));
+        this.addWood(new Cactus(this));
     }
 
     addEntity(entity) {

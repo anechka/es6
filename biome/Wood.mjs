@@ -1,5 +1,7 @@
 class Wood {
-    constructor(tempRange, temperature) {
+    constructor(tempRange, Biome) {
+        const temperature = Biome.temperature;
+
         const lowRange = tempRange[0];
         const highRange = tempRange[1];
 
@@ -7,7 +9,7 @@ class Wood {
 
         if (okTemp) {
             this.live = true;
-            console.log(`Spawn ${this.constructor.name} in temp: ${temperature}`);
+            console.log(`Spawn ${this.constructor.name} in ${Biome.constructor.name} and temp: ${temperature}`);
         }
         console.assert(
             okTemp,
@@ -18,28 +20,28 @@ class Wood {
 
 export
 class Pine extends Wood {
-    constructor(temperature) {
-        super([-20, 30], temperature)
+    constructor(Biome) {
+        super([-20, 30], Biome)
     }
 }
 
 export
 class Spruce extends Wood {
-    constructor(temperature) {
-        super([-10, 25], temperature)
+    constructor(Biome) {
+        super([-10, 25], Biome)
     }
 }
 
 export
 class Oak extends Wood {
-    constructor(temperature) {
-        super([-15, 35], temperature)
+    constructor(Biome) {
+        super([-15, 35], Biome)
     }
 }
 
 export
 class Cactus extends Wood {
-    constructor(temperature) {
-        super([32, 70], temperature)
+    constructor(Biome) {
+        super([32, 70], Biome)
     }
 }

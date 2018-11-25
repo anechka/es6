@@ -8,12 +8,18 @@ class TaigaBiome extends BaseBiome {
     constructor(temperature) {
         super(temperature, 10);
 
-        this.addWood(new Pine(this.temperature));
-        this.addWood(new Spruce(this.temperature));
+        this.addWood(new Pine(this));
+        this.addWood(new Spruce(this))
     }
 
     addEntity(entity) {
-        if (entity instanceof Zombie) entity.setBigFoot();
+        if (
+            entity instanceof Zombie &&
+            this.fallout === "snow"
+        )
+        {
+            entity.setBigFoot();
+        }
         this.entityList.push(entity);
     }
 }

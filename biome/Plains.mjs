@@ -6,7 +6,7 @@ class PlainsBiome extends BaseBiome {
     constructor(temperature) {
         super(temperature, 20);
 
-        this.addWood(new Pine(this.temperature));
-        this.addWood(new Oak(this.temperature));
+        this.addWood(new Pine(this));
+        this.addWood(new Oak(this));
     }
 }

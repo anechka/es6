@@ -4,7 +4,7 @@ import { PlainsBiome } from "./biome/Plains"
 
 import Zombie from "./entity/monster/Zombie"
 
-const Taiga = new TaigaBiome(19);
+const Taiga = new TaigaBiome(0);
 const Desert = new DesertBiome();
 const Plains = new PlainsBiome();
 

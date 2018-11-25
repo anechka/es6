@@ -25,7 +25,7 @@ class BaseBiome {
             this.fallout = "snow"
         }
 
-        this.plaints = [];
+        this.plants = [];
     }
 
     get temperature() {
@@ -37,6 +37,6 @@ class BaseBiome {
     }
 
     addWood(woodEntity) {
-        if (woodEntity.live) this.plaints.push(woodEntity)
+        if (woodEntity.live) this.plants.push(woodEntity)
     }
 }
