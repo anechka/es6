@@ -7,14 +7,14 @@ https://nodejs.org/api/esm.html
 Assertion failed: No temperature provided for DesertBiome
 TaigaBiome {
   entityList: [ Zombie { health: 100, type: 'BigFoot' } ],
-  baseTemp: 0,
+  biomeTemp: 0,
   rainFall: 'snow' }
 DesertBiome {
   entityList: [ Zombie { health: 100, type: 'Husk' } ],
-  baseTemp: 40,
+  biomeTemp: 40,
   rainFall: null }
 PlainsBiome {
   entityList: [ Zombie { health: 100, type: 'Zombie' } ],
-  baseTemp: 30,
+  biomeTemp: 30,
   rainFall: 'rain' }
 ```
