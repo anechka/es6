@@ -1,6 +1,6 @@
 import BaseBiome from "./BaseBiome";
 import { Pine, Spruce } from "./Wood"
-import Zombie from "../entity/monster/Zombie";
+import Zombie from "../entity/monsters/Zombie";
 
 export
 class TaigaBiome extends BaseBiome {

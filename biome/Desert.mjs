@@ -1,5 +1,5 @@
 import BaseBiome from "./BaseBiome";
-import Zombie from "../entity/monster/Zombie";
+import Zombie from "../entity/monsters/Zombie";
 import {Cactus} from "./Wood";
 
 export

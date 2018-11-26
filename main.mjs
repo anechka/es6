@@ -2,7 +2,7 @@ import { TaigaBiome } from "./biome/Taiga"
 import { DesertBiome } from "./biome/Desert"
 import { PlainsBiome } from "./biome/Plains"
 
-import Zombie from "./entity/monster/Zombie"
+import Zombie from "./entity/monsters/Zombie"
 
 const Taiga = new TaigaBiome(0);
 const Desert = new DesertBiome();
