@@ -2,13 +2,16 @@ import Check from "../utils/numberUtils"
 
 export default
 class BaseBiome {
-    constructor(temperature, defaultTemp) {
+    constructor(temperature, defaultTemp, foodList) {
         this.entityList = [];
+        this.plants = [];
+        this.animals = [];
+
+        this.foodList = foodList || [];
 
         defaultTemp = defaultTemp || 0;
 
         const isTemperature = Check.isNumber(temperature);
-
         console.assert(
             isTemperature,
             `No temperature provided for ${this.constructor.name}`
@@ -25,7 +28,6 @@ class BaseBiome {
             this.fallout = "snow"
         }
 
-        this.plants = [];
     }
 
     get temperature() {
@@ -39,4 +41,20 @@ class BaseBiome {
     addWood(woodEntity) {
         if (woodEntity.live) this.plants.push(woodEntity)
     }
+
+    addAnimal(animal) {
+
+        for (let biomeFood of this.foodList) {
+
+            if (animal.food.includes(biomeFood)) {
+
+                animal.setForTemp(this.temperature);
+
+                this.animals.push(animal);
+                break
+            }
+
+        }
+    }
+
 }

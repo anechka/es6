@@ -6,7 +6,7 @@ export
 class TaigaBiome extends BaseBiome {
 
     constructor(temperature) {
-        super(temperature, 10);
+        super(temperature, 10, ["grass", "leaves"]);
 
         this.addWood(new Pine(this));
         this.addWood(new Spruce(this))
