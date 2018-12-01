@@ -1,13 +1,10 @@
 import BaseBiome from "./BaseBiome";
 import Zombie from "../entity/monsters/Zombie";
-import {Cactus} from "./Wood";
 
 export
 class DesertBiome extends BaseBiome {
     constructor(temperature) {
         super(temperature, 40);
-
-        this.addWood(new Cactus(this));
     }
 
     addEntity(entity) {

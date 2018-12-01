@@ -1,47 +1,36 @@
 class Wood {
-    constructor(tempRange, Biome) {
-        const temperature = Biome.temperature;
-
-        const lowRange = tempRange[0];
-        const highRange = tempRange[1];
-
-        const okTemp = (lowRange < temperature) && (temperature < highRange);
-
-        if (okTemp) {
-            this.live = true;
-            console.log(`Spawn ${this.constructor.name} in ${Biome.constructor.name} and temp: ${temperature}`);
-        }
-        console.assert(
-            okTemp,
-            `Can't spawn ${this.constructor.name} in Biome`
-        );
+    constructor(low, high) {
+        this.temperature = {
+            low,
+            high
+        };
     }
 }
 
 export
 class Pine extends Wood {
-    constructor(Biome) {
-        super([-20, 30], Biome)
+    constructor() {
+        super(-20, 30)
     }
 }
 
 export
 class Spruce extends Wood {
-    constructor(Biome) {
-        super([-10, 25], Biome)
+    constructor() {
+        super(-10, 25)
     }
 }
 
 export
 class Oak extends Wood {
-    constructor(Biome) {
-        super([-15, 35], Biome)
+    constructor() {
+        super(-15, 35)
     }
 }
 
 export
 class Cactus extends Wood {
-    constructor(Biome) {
-        super([32, 70], Biome)
+    constructor() {
+        super(32, 70)
     }
 }

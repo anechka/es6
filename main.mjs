@@ -9,6 +9,11 @@ const Taiga = new TaigaBiome(0);
 const Desert = new DesertBiome();
 const Plains = new PlainsBiome();
 
+import * as Wood from "./biome/Wood"
+
+Taiga.addWood(new Wood.Pine());
+Desert.addWood(new Wood.Cactus());
+
 Taiga.addEntity(new Zombie());
 Plains.addEntity(new Zombie());
 Desert.addEntity(new Zombie());

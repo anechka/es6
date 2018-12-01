@@ -38,19 +38,34 @@ class BaseBiome {
         this.entityList.push(entity)
     }
 
-    addWood(woodEntity) {
-        if (woodEntity.live) this.plants.push(woodEntity)
+    addWood(Wood) {
+
+        const
+        canLive =
+            (Wood.temperature.low < this.biomeTemp)
+            &&
+            (this.biomeTemp < Wood.temperature.high);
+
+        let message = `Can't spawn tree in ${this.constructor.name}`;
+
+        if (canLive) {
+            this.plants.push(Wood);
+            // Update OK log message
+            message = `Spawn ${Wood.constructor.name} in ${this.constructor.name} and temp: ${this.biomeTemp}`
+        }
+
+        console.log(message);
     }
 
-    addAnimal(animal) {
+    addAnimal(Animal) {
 
         for (let biomeFood of this.foodList) {
 
-            if (animal.food.includes(biomeFood)) {
+            if (Animal.food.includes(biomeFood)) {
 
-                animal.setForTemp(this.temperature);
+                Animal.setForTemp(this.temperature);
 
-                this.animals.push(animal);
+                this.animals.push(Animal);
                 break
             }
 
